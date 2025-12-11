@@ -29,14 +29,14 @@ public class LibrarySystem {
 
     public String getUserPhone(Long userId) {
         if (userMap.containsKey(userId)) {
-            return userMap.get(userId).getPhone(); // Assumes User has getPhone() (implied by attributes)
+            return userMap.get(userId).getPhone();
         }
         return null;
     }
 
     public String getUserEmail(Long userId) {
         if (userMap.containsKey(userId)) {
-            return userMap.get(userId).getEmail(); // Assumes User has getEmail() (implied by attributes)
+            return userMap.get(userId).getEmail();
         }
         return null;
     }
