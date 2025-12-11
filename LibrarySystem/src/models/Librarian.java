@@ -1,6 +1,6 @@
 package models;
 
-import java.util.Map;
+import java.util.HashMap;
 import main.LibrarySystem;
 
 public class Librarian extends User {
@@ -11,7 +11,7 @@ public class Librarian extends User {
         this.librarySystem = librarySystem;
     }
 
-    public Transaction checkoutBook(Long patronId, Long bookId, Map<Long, Book> bookMap) {
+    public Transaction checkoutBook(Long patronId, Long bookId, HashMap<Long, Book> bookMap) {
         if (bookMap.containsKey(bookId)) {
             Book book = bookMap.get(bookId);
             if (book.isAvailable()) {
@@ -22,7 +22,7 @@ public class Librarian extends User {
         return null;
     }
 
-    public boolean returnBook(Long patronId, Long bookId, Map<Long, Book> bookMap) {
+    public boolean returnBook(Long patronId, Long bookId, HashMap<Long, Book> bookMap) {
         if (bookMap.containsKey(bookId)) {
             bookMap.get(bookId).incrementAmount();
             return true;
@@ -34,7 +34,7 @@ public class Librarian extends User {
         return new Transaction(System.currentTimeMillis(), patronId, librarianId, bookId, "Reservation");
     }
 
-    public void notifyPatron(Long reservationId, Map<Long, Reservation> resMap) {
+    public void notifyPatron(Long reservationId, HashMap<Long, Reservation> resMap) {
         if (resMap.containsKey(reservationId)) {
             resMap.get(reservationId).markAsNotified();
         }
