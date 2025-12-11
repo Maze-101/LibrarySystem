@@ -2,7 +2,8 @@ package models;
 
 import java.time.LocalDate;
 
-public class Transaction{
+public class Transaction {
+
     private Long id;
     private Long patronId;
     private Long librarianId;
@@ -30,25 +31,37 @@ public class Transaction{
         return true;
     }
 
-    public Long getId() { 
-        return id; 
+    public Long getId() {
+        return id;
     }
-    public Long getPatronId() { 
-        return patronId; 
+
+    public Long getPatronId() {
+        return patronId;
     }
-    public Long getLibrarianId() { 
-        return librarianId; 
+
+    public Long getLibrarianId() {
+        return librarianId;
     }
-    public Long getBookId() { 
-        return bookId; 
+
+    public Long getBookId() {
+        return bookId;
     }
-    public String getType() { 
-        return type; 
+
+    public String getType() {
+        return type;
     }
-    public LocalDate getDate() { 
-        return date; 
+
+    public LocalDate getDate() {
+        return date;
     }
-    public LocalDate getDueDate() { 
-        return dueDate; 
+
+    public LocalDate getDueDate() {
+        return dueDate;
     }
+    @Override
+    public String toString() {
+        return this.id + " " + this.patronId + " " + this.librarianId + " " + this.bookId + " " + this.type;
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package models;
 
-public class Book{
+public class Book {
+
     private Long id;
     private String title;
     private String author;
@@ -55,24 +56,36 @@ public class Book{
     }
 
     public Long getId() {
-        return id; 
+        return id;
     }
+
     public String getTitle() {
         return title;
     }
-    public String getAuthor() { 
-        return author; 
+
+    public String getAuthor() {
+        return author;
     }
-    public String getGenre() { 
-        return genre; 
+
+    public String getGenre() {
+        return genre;
     }
+
     public int getPublicationYear() {
-        return publicationYear; 
+        return publicationYear;
     }
-    public String getStatus() { 
-        return status; 
+
+    public String getStatus() {
+        return status;
     }
-    public int getAmount() { 
-        return amount; 
+
+    public int getAmount() {
+        return amount;
     }
+
+    @Override
+    public String toString() {
+        return this.id + " " + this.title + " " + this.author + " " + this.genre + " " + this.publicationYear + " " + this.amount;
+    }
+
 }

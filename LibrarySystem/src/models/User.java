@@ -3,6 +3,7 @@ package models;
 import java.util.Map;
 
 public class User {
+
     private Long Id;
     private String username;
     private String password;
@@ -19,20 +20,19 @@ public class User {
         this.role = role;
     }
 
-
     public Boolean login(Long id, String password) {
         return this.Id.equals(id) && this.password.equals(password);
     }
 
     public void logout() {
-        
+
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    public String getUsername(){
+
+    public String getUsername() {
         return this.username;
     }
 
@@ -59,11 +59,21 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+    public String getRole() {
+        return this.role;
+    }
+
     public Book searchBook(Long bookId, Map<Long, Book> bookMap) {
         if (bookMap != null && bookMap.containsKey(bookId)) {
             return bookMap.get(bookId);
         }
         return null;
     }
+    @Override
+public String toString() {
+    return this.Id + " " + this.username + " " + this.password + " " + this.phone + " " +this.email 
+            + " " + this.role;
+}
+
 }

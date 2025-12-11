@@ -3,6 +3,7 @@ package models;
 import java.time.LocalDate;
 
 public class Reservation {
+
     private Long id;
     private Long patronId;
     private Long bookId;
@@ -21,19 +22,29 @@ public class Reservation {
         this.notified = true;
     }
 
-    public Long getId() { 
-        return id; 
+    public Long getId() {
+        return id;
     }
-    public Long getPatronId() { 
-        return patronId; 
+
+    public Long getPatronId() {
+        return patronId;
     }
-    public Long getBookId() { 
-        return bookId; 
+
+    public Long getBookId() {
+        return bookId;
     }
-    public LocalDate getReservationDate() { 
-        return reservationDate; 
+
+    public LocalDate getReservationDate() {
+        return reservationDate;
     }
-    public boolean isNotified() { 
-        return notified; 
+
+    public boolean isNotified() {
+        return notified;
     }
+
+    @Override
+    public String toString() {
+        return this.id + " " + this.patronId + " " + this.bookId;
+    }
+
 }
