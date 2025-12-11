@@ -52,7 +52,7 @@ public class Admin extends User {
         return false;
     }
     
-    public Boolean updateUsername(Long userId, String newName, Map<Long, User> userMap) {
+    public Boolean updateUsername(Long userId, String newName, HashMap<Long, User> userMap) {
         if (userMap.containsKey(userId)) {
             User u = userMap.get(userId);
             u.setUsername(newName);
@@ -61,7 +61,7 @@ public class Admin extends User {
         return false;
     }
 
-     public Boolean updateUserPhone(Long userId, String newPhone, Map<Long, User> userMap) {
+     public Boolean updateUserPhone(Long userId, String newPhone, HashMap<Long, User> userMap) {
         if (userMap.containsKey(userId)) {
             User u = userMap.get(userId);
             u.setPhone(newPhone);
@@ -70,7 +70,7 @@ public class Admin extends User {
         return false;
     }
 
-    public Boolean updateUserEmail(Long userId, String newEmail, Map<Long, User> userMap) {
+    public Boolean updateUserEmail(Long userId, String newEmail, HashMap<Long, User> userMap) {
         if (userMap.containsKey(userId)) {
             User u = userMap.get(userId);
             u.setEmail(newEmail);
@@ -79,7 +79,7 @@ public class Admin extends User {
         return false;
     }
 
-    public Boolean addBook(String title, String author, int year, String genre, int amount, Map<Long, Book> bookMap) {
+    public Boolean addBook(String title, String author, int year, String genre, int amount, HashMap<Long, Book> bookMap) {
         Long newId = (long) (bookMap.size() + 1);
         Book book = new Book(newId, title, author, genre, year, amount);
         bookMap.put(newId, book);
